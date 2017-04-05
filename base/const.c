@@ -1,7 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+/*
+    const char **pp;    //*(*pp + 1u) is read-only
+    const char p;       //p is read-only
+    const char *p1;     //*(p + 1u) is read-only
+    char *const p2;     // p is read-only
+    char * const * p3;  // *p3 read-only location
+    
+the best way to rember:
+    * is taken as 'pointer to' and from back to front 
+*/
 void foo(const char **pp)
 {
     //*(*pp + 1u) is read-only
