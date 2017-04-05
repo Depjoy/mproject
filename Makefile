@@ -9,6 +9,7 @@ CFLAGS += -I./include \
 LDFLAGS += -lpthread -ldl
 BIN = ./bin
 SRC += ./src/log/log.c \
+	   ./src/file/file.c \
 	   ./src/main.c \
 
 test: 
