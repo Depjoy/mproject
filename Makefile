@@ -3,16 +3,25 @@
 CC  ?= gcc
 CXX ?= g++
 
-CFLAGS += -g -Wall -Werror -pthread
-CFLAGS += -I./include \
+CFLAGS += -g -Wall -Werror
+CFLAGS += -lpthread -ldl
+LDFLAGS += -I./include
 
-LDFLAGS += -lpthread -ldl
 BIN = ./bin
-SRC += ./src/log/log.c \
-	   ./src/file/file.c \
-	   ./src/main.c \
+SRC += src/log/log.c \
+	   src/file/file.c \
+	   src/main.c \
 
+LIBSRC += src/math/stime.c
+
+TARGET = libshare.so test
+all: $(TARGET)
+
+libshare.so:
+	$(CC) -o $@ $^ $(LIBSRC) -fPIC -shared
 test: 
-	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS) $(SRC)
+	$(CC) -o $@ $^ $(SRC) $(LDFLAGS) $(CFLAGS)
 clean:
-	rm -f *.so *.o test
+	rm -f *.so *.o
+	rm bin/test
+	rm lib/libshare.so
