@@ -12,7 +12,7 @@ SRC += src/log/log.c \
 	   src/file/file.c \
 	   src/main.c \
 
-LIBSRC += src/math/stime.c
+LIBSRC += demo/libshare/solink/stime.c
 
 TARGET = libshare.so test
 all: $(TARGET)
