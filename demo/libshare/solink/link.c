@@ -3,6 +3,6 @@
 
 int main(int argc,char *argv[])
 {
-    fprintf(stdout,"time %lu\n",micro64());
+    fprintf(stdout,"time %llu\n",micro64());
     return 0;
 }
