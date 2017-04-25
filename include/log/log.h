@@ -7,7 +7,7 @@
 #include <time.h>
 
 #define MAXLEN 512
-#define NO_TIME_LOG_FILE_PATH "./debug/no_time_log/mylog.txt"
+#define NO_TIME_LOG_FILE_PATH "./debug/mylog.txt"
 
 /*
     record with system time,line and function in terminal

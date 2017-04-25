@@ -10,6 +10,7 @@ LDFLAGS += -I./include
 BIN = ./bin
 SRC += src/log/log.c \
 	   src/file/file.c \
+       src/math/ch_parity.c \
 	   src/main.c \
 
 LIBSRC += demo/libshare/solink/stime.c

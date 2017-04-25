@@ -1,8 +1,6 @@
-if [ ! -d "debug/no_time_log/" ];then
+if [ ! -d "debug" ];then
     mkdir debug
-    cd debug
-    mkdir no_time_log
-    cd ..
+    echo "creat debug dir"
 fi
 
 if [ ! -d "bin" ]; then

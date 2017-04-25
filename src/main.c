@@ -8,8 +8,10 @@
 #include <setjmp.h>
 #include "log/log.h"
 #include "file/file.h"
+#include "math/stime.h"
+#include "math/ch_parity.h"
 
-#define SHARE_PATH "../lib/libshare.so"
+#define SHARE_PATH "./lib/libshare.so"
 //#define SETJMP_DEBUG
 
 #ifdef SETJMP_DEBUG
@@ -22,8 +24,11 @@ static void f1(int i,int j,int k,int l){
     longjmp(jmp,1);
 }
 #endif
+
 int main(int argc,char *argv[])
 {
+    //set compile time as version information
+    fprintf(stdout,"vesion info %s\n",STR_COM_TIME);
     /* creat a file in specific path */
     s_mkdir("file",W_OK,S_IRWXU);
 
